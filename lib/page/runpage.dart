@@ -12,7 +12,7 @@ class _RunpageState extends State<Runpage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Colors.red,
+        color: Colors.black,
       ),
     );
   }
