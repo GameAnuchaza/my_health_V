@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_health/fun/AQIProvider.dart';
 import 'package:my_health/fun/conpage.dart';
 import 'package:provider/provider.dart';
 
@@ -16,6 +17,7 @@ class _LoadingState extends State<Loading> {
     // TODO: implement initState
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await context.read<AQIProvider>().fetchAll(); 
         await Future.delayed(const Duration(seconds: 2));
 
         context.read<ConPage>().goToPage(1);
