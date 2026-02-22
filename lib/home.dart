@@ -13,7 +13,8 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      backgroundColor: Colors.white,
+      body: SafeArea(child: Column(
         children: [
           Expanded(flex: 10, child: context.watch<Conwidet>().currentwidet),
           Expanded(
@@ -22,9 +23,9 @@ class _HomeState extends State<Home> {
                 color: Colors.white,
                 boxShadow: [
                   BoxShadow(
-                    blurRadius: 10,
-                    offset: Offset(0, 8),
-                    color: Colors.black,
+                    blurRadius: 5,
+                    offset: Offset(0, -8),
+                    color: const Color.fromRGBO(158, 158, 158, 0.1),
                   ),
                 ],
               ),
@@ -73,7 +74,7 @@ class _HomeState extends State<Home> {
             ),
           ),
         ],
-      ),
+      ),),
     );
   }
 }

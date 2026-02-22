@@ -62,7 +62,7 @@ class _RunpageState extends State<Runpage> {
 
   if (temp >= 36) return const Color.fromRGBO(244, 67, 54, 0.6);
   if (temp >= 30) return const Color.fromRGBO(255, 152, 0, 0.6);
-  if (temp >= 20) return const Color.fromARGB(153, 0, 255, 8);
+  if (temp >= 20) return const Color.fromARGB(255, 0, 190, 6);
   return Colors.blue;
 }
 
@@ -79,7 +79,7 @@ String getTemperatureLevel(double? temp) {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Colors.black,
+        color: Colors.white,
         width: double.infinity,
         height: double.infinity,
         child: SingleChildScrollView(
@@ -96,19 +96,19 @@ String getTemperatureLevel(double? temp) {
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: [
-                        Color.fromRGBO(0, 34, 255, 1),
-                        Color.fromRGBO(33, 144, 156, 1),
+                        Color.fromRGBO(1, 213, 236, 1),
+                        Color.fromRGBO(1, 213, 236, 1),
                       ],
                     ),
                     border: Border.all(
-                      color: const Color.fromRGBO(255, 255, 255, 0.3),
+                      color: Color.fromRGBO(1, 213, 236, 1),
                     ),
                     borderRadius: BorderRadius.circular(10),
                     boxShadow: [
                       BoxShadow(
-                        color: const Color.fromRGBO(255, 255, 255, 0.2),
+                        color: Colors.grey,
                         blurRadius: 5,
-                        offset: Offset(0, 5),
+                        offset: Offset(0, 0),
                       ),
                     ],
                   ),
@@ -116,7 +116,7 @@ String getTemperatureLevel(double? temp) {
                   alignment: Alignment.center,
                   child: Text(
                     "กรุงเทพมหานคร",
-                    style: TextStyle(color: Colors.white, fontSize: 30),
+                    style: TextStyle(color: Color.fromRGBO(255, 255, 255, 1), fontSize: 30),
                   ),
                 ),
               ),
@@ -125,25 +125,26 @@ String getTemperatureLevel(double? temp) {
                 padding: EdgeInsets.all(10),
                 child: Container(
                   width: double.infinity,
-                  height: 110,
+                  height: 200,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     gradient: LinearGradient(
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: [
-                        Color.fromRGBO(0, 170, 255, 0.4),
-                        Color.fromRGBO(29, 207, 207, 0.4),
+                        Color.fromRGBO(0, 170, 255, 9),
+                        Color.fromRGBO(0, 170, 255, 9),
+                        
                       ],
                     ),
                     border: Border.all(
-                      color: Color.fromRGBO(255, 255, 255, 0.3),
+                      color: Color.fromRGBO(0, 170, 255, 0.5),
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: Color.fromRGBO(255, 255, 255, 0.2),
+                        color: Colors.grey,
                         blurRadius: 5,
-                        offset: Offset(0, 5),
+                        offset: Offset(0, 0),
                       ),
                     ],
                   ),
@@ -161,21 +162,24 @@ String getTemperatureLevel(double? temp) {
                       }
 
                       return Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        
                         children: [
+                          SizedBox(
+                            height: 50,
+                          ),
                           Text(
                             "คุณภาพอากาศ $aqi",
                             style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
+                              color: Color.fromRGBO(255, 255, 255, 1),
+                              fontSize: 30,
                             ),
                           ),
                           const SizedBox(height: 8),
                           Text(
                             runningAdvice(aqi),
                             style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
+                              color: Color.fromRGBO(255, 255, 255, 1),
+                              fontSize: 30,
                             ),
                           ),
                         ],
@@ -202,9 +206,9 @@ String getTemperatureLevel(double? temp) {
                                 border: Border.all(color: const Color.fromRGBO(255, 255, 255, 0.3)),
                                 boxShadow: [
                       BoxShadow(
-                        color: Color.fromRGBO(255, 255, 255, 0.2),
+                        color: Colors.grey,
                         blurRadius: 5,
-                        offset: Offset(0, 5),
+                        offset: Offset(0, 0),
                       ),
                     ],
                               ),
@@ -250,9 +254,9 @@ String getTemperatureLevel(double? temp) {
                                 border: Border.all(color: const Color.fromRGBO(255, 255, 255, 0.3)),
                                 boxShadow: [
                       BoxShadow(
-                        color: Color.fromRGBO(255, 255, 255, 0.2),
+                        color: Colors.grey,
                         blurRadius: 5,
-                        offset: Offset(0, 5),
+                        offset: Offset(0, 0),
                       ),
                     ],
                               ),

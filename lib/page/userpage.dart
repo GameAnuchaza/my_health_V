@@ -11,7 +11,7 @@ class _UserpageState extends State<Userpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: const Color.fromARGB(255, 0, 177, 6),
       body: Container(
         
 
@@ -21,30 +21,77 @@ class _UserpageState extends State<Userpage> {
               SizedBox(
                 height: 30,
               ),
+              // Padding(
+              //   padding: const EdgeInsets.all(8.0),
+              //   child: Container(
+                  
+              //     width: double.infinity,
+              //     height: 130,
+
+                  
+              //         child: Padding(
+              //           padding: EdgeInsets.all(15),
+              //           child: Row(
+              //             children: [
+                            
+              //               Expanded(
+              //                 flex: 2,
+              //                 child: Container(
+              //                   height: 60,
+
+              //                   decoration: BoxDecoration(
+                               
+                                
+                                
+              //                   borderRadius: BorderRadius.circular(8),
+              //                   border: Border.all(
+              //                     color: Colors.white,
+              //                     width: 1
+              //                   )
+              //                   ),
+                                
+              //                   child: Center(
+              //                     child: Text(
+              //                       'เข้าสู่ระบบ',
+              //                       style: TextStyle(fontSize: 30,color: Colors.white),
+              //                     ),
+              //                   ),
+              //                 ),
+              //               ),
+              //               SizedBox(
+              //                 width: 10,
+              //               ),
+              //               Expanded(
+              //                 flex: 2,
+              //                 child: Container(
+              //                   height: 60,
+
+              //                   decoration: BoxDecoration(
+              //                   borderRadius: BorderRadius.circular(8),
+              //                   border: Border.all(
+              //                     color: Colors.white,
+              //                     width: 1
+              //                   ),
+                                
+              //                   ),
+              //                   child: Center(
+              //                     child: Text(
+              //                       'สมัครสมาชิก',
+              //                       style: TextStyle(fontSize: 30,color: Colors.white),
+              //                     ),
+              //                   ),
+              //                 ),
+              //               ),
+              //             ],
+              //           ),
+              //         ),
+              
+              //   ),
+              // ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
-                  decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        blurRadius: 5,
-
-                        offset: Offset(0, 0),
-                        color: Colors.grey,
-                        
-                      ),
-                    ],
-                    gradient: LinearGradient(
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                      colors: [
-                        
-                        Color.fromRGBO(25, 25, 241, 1),
-                        Color.fromRGBO(0, 212, 255, 1)
-                      ]
-                    ),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
+                  
                   width: double.infinity,
                   height: 130,
 
@@ -53,68 +100,29 @@ class _UserpageState extends State<Userpage> {
                         padding: EdgeInsets.all(15),
                         child: Row(
                           children: [
-                            Expanded(
-                              child: Container(
-                                child: Center(
-                                  child: Icon(Icons.account_circle, size: 60,color: Colors.white,),
-                                ),
-                              ),
-                            ),
+                            
                             Expanded(
                               flex: 2,
                               child: Container(
-                                height: 40,
+                                height: 60,
 
                                 decoration: BoxDecoration(
-                                gradient: LinearGradient(
-                                  begin: Alignment.centerLeft,
-                                  end: Alignment.centerRight,
-                                  colors: [
-                                    Color.fromRGBO(0, 224, 94, 1),
-                                    Color.fromRGBO(2, 204, 86, 1),
-           
-                                  ]
+                               
                                 
-                                )
-                                ,
+                                
                                 borderRadius: BorderRadius.circular(8),
-                                border: Border.all(
-                                  color: Colors.white,
-                                  width: 1
-                                )
+                              
                                 ),
                                 
                                 child: Center(
                                   child: Text(
-                                    'เข้าสู่ระบบ',
-                                    style: TextStyle(fontSize: 22,color: Colors.white),
+                                    'My Health',
+                                    style: TextStyle(fontSize: 50,color: Colors.white),
                                   ),
                                 ),
                               ),
                             ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Expanded(
-                              flex: 2,
-                              child: Container(
-                                height: 40,
-
-                                decoration: BoxDecoration(color: Colors.amber,
-                                borderRadius: BorderRadius.circular(8),
-                                border: Border.all(
-                                  color: Colors.white,
-                                  width: 1
-                                )
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    'สมัครสมาชิก',
-                                    style: TextStyle(fontSize: 22,color: Colors.white),
-                                  ),
-                                ),
-                              ),
-                            ),
+                            
                           ],
                         ),
                       ),
@@ -127,11 +135,50 @@ class _UserpageState extends State<Userpage> {
                 height: 660,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: Colors.yellow,
+                  color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(30),
                     topRight: Radius.circular(30)
                   )
+                ),
+                padding: EdgeInsets.only(
+                  top: 40
+                ),
+                child: Column(
+                  children: [
+                    Expanded(child: Container(
+                      child: Row(
+                        children: [
+                          Expanded(child: Column(
+                            children: <Widget>[
+                              Icon(Icons.settings, size: 60,),
+                              Text("ตั้งค่า",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),)
+                            ],
+                          )),
+                          Expanded(child: Container()),
+                          Expanded(child: Container())
+                        ],
+                      ),
+                    )),
+                    Expanded(child: Container(
+                      child: Row(
+                        children: [
+                          Expanded(child: Container()),
+                          Expanded(child: Container()),
+                          Expanded(child: Container())
+                        ],
+                      ),
+                    )),
+                    Expanded(child: Container(
+                      child: Row(
+                        children: [
+                          Expanded(child: Container()),
+                          Expanded(child: Container()),
+                          Expanded(child: Container())
+                        ],
+                      ),
+                    )),
+                  ],
                 ),
               )
             ],
