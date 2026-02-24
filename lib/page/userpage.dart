@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_health/fun/conwidet.dart';
+import 'package:provider/provider.dart';
 
 class Userpage extends StatefulWidget {
   const Userpage({super.key});
@@ -117,7 +119,7 @@ class _UserpageState extends State<Userpage> {
                                 child: Center(
                                   child: Text(
                                     'My Health',
-                                    style: TextStyle(fontSize: 50,color: Colors.white),
+                                    style: TextStyle(fontSize: 45,color: Colors.white),
                                   ),
                                 ),
                               ),
@@ -149,12 +151,17 @@ class _UserpageState extends State<Userpage> {
                     Expanded(child: Container(
                       child: Row(
                         children: [
-                          Expanded(child: Column(
+                          Expanded(child: InkWell(
+                            onTap: () {
+                              context.read<Conwidet>().goToWidet(7);
+                            },
+                            child: Column(
                             children: <Widget>[
-                              Icon(Icons.settings, size: 60,),
+                              Icon(Icons.settings, size: 60,color: Colors.blueAccent,),
                               Text("ตั้งค่า",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),)
                             ],
-                          )),
+                          )
+                          ),),
                           Expanded(child: Container()),
                           Expanded(child: Container())
                         ],
@@ -178,6 +185,13 @@ class _UserpageState extends State<Userpage> {
                         ],
                       ),
                     )),
+                    Align(
+                      alignment: Alignment.center,
+                      child: Text('by GameAnuchaza'),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    )
                   ],
                 ),
               )

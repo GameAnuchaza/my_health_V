@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_health/fun/AQIProvider.dart';
+import 'package:my_health/fun/Hiveset.dart';
 import 'package:my_health/fun/conpage.dart';
 import 'package:provider/provider.dart';
 
@@ -10,9 +11,7 @@ class Loading extends StatefulWidget {
   State<Loading> createState() => _LoadingState();
 }
 
-class _LoadingState extends State<Loading>
-    with SingleTickerProviderStateMixin {
-
+class _LoadingState extends State<Loading> with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
 
@@ -39,7 +38,9 @@ class _LoadingState extends State<Loading>
 
   Future<void> _loadApp() async {
     try {
-      await context.read<AQIProvider>().fetchAll(); // รอ API เสร็จจริง
+      final province = context.read<SettingsProvider>().province;
+
+      await context.read<AQIProvider>().fetchAll(province);
 
       if (!mounted) return;
 
@@ -77,13 +78,9 @@ class _LoadingState extends State<Loading>
                 const SizedBox(height: 20),
                 const Text(
                   "My Health",
-                  style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 20),
-                
               ],
             ),
           ),

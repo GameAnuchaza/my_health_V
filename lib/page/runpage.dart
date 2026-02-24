@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:my_health/fun/AQIProvider.dart';
+import 'package:my_health/fun/Hiveset.dart';
 import 'package:provider/provider.dart';
 
 class Runpage extends StatefulWidget {
@@ -58,22 +59,22 @@ class _RunpageState extends State<Runpage> {
   }
 
   Color getTemperatureColor(double? temp) {
-  if (temp == null) return Colors.grey;
+    if (temp == null) return Colors.grey;
 
-  if (temp >= 36) return const Color.fromRGBO(244, 67, 54, 0.6);
-  if (temp >= 30) return const Color.fromRGBO(255, 152, 0, 0.6);
-  if (temp >= 20) return const Color.fromARGB(255, 0, 190, 6);
-  return Colors.blue;
-}
+    if (temp >= 36) return const Color.fromRGBO(244, 67, 54, 0.6);
+    if (temp >= 30) return const Color.fromRGBO(255, 152, 0, 0.6);
+    if (temp >= 20) return const Color.fromARGB(255, 0, 190, 6);
+    return Colors.blue;
+  }
 
-String getTemperatureLevel(double? temp) {
-  if (temp == null) return "ไม่ทราบค่า";
+  String getTemperatureLevel(double? temp) {
+    if (temp == null) return "ไม่ทราบค่า";
 
-  if (temp >= 36) return "ร้อนจัด";
-  if (temp >= 30) return "ร้อน";
-  if (temp >= 20) return "ปกติ";
-  return "เย็น";
-}
+    if (temp >= 36) return "ร้อนจัด";
+    if (temp >= 30) return "ร้อน";
+    if (temp >= 20) return "ปกติ";
+    return "เย็น";
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -100,9 +101,7 @@ String getTemperatureLevel(double? temp) {
                         Color.fromRGBO(1, 213, 236, 1),
                       ],
                     ),
-                    border: Border.all(
-                      color: Color.fromRGBO(1, 213, 236, 1),
-                    ),
+                    border: Border.all(color: Color.fromRGBO(1, 213, 236, 1)),
                     borderRadius: BorderRadius.circular(10),
                     boxShadow: [
                       BoxShadow(
@@ -114,9 +113,16 @@ String getTemperatureLevel(double? temp) {
                   ),
 
                   alignment: Alignment.center,
-                  child: Text(
-                    "กรุงเทพมหานคร",
-                    style: TextStyle(color: Color.fromRGBO(255, 255, 255, 1), fontSize: 30),
+                  child: Consumer<SettingsProvider>(
+                    builder: (context, settings, child) {
+                      return Text(
+                        settings.province,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 30,
+                        ),
+                      );
+                    },
                   ),
                 ),
               ),
@@ -134,12 +140,9 @@ String getTemperatureLevel(double? temp) {
                       colors: [
                         Color.fromRGBO(0, 170, 255, 9),
                         Color.fromRGBO(0, 170, 255, 9),
-                        
                       ],
                     ),
-                    border: Border.all(
-                      color: Color.fromRGBO(0, 170, 255, 0.5),
-                    ),
+                    border: Border.all(color: Color.fromRGBO(0, 170, 255, 0.5)),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.grey,
@@ -162,11 +165,8 @@ String getTemperatureLevel(double? temp) {
                       }
 
                       return Column(
-                        
                         children: [
-                          SizedBox(
-                            height: 50,
-                          ),
+                          SizedBox(height: 50),
                           Text(
                             "คุณภาพอากาศ $aqi",
                             style: const TextStyle(
@@ -201,16 +201,25 @@ String getTemperatureLevel(double? temp) {
                           Expanded(
                             child: Container(
                               decoration: BoxDecoration(
-                                color: getTemperatureColor(provider.temperature),
+                                color: getTemperatureColor(
+                                  provider.temperature,
+                                ),
                                 borderRadius: BorderRadius.circular(10),
-                                border: Border.all(color: const Color.fromRGBO(255, 255, 255, 0.3)),
+                                border: Border.all(
+                                  color: const Color.fromRGBO(
+                                    255,
+                                    255,
+                                    255,
+                                    0.3,
+                                  ),
+                                ),
                                 boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey,
-                        blurRadius: 5,
-                        offset: Offset(0, 0),
-                      ),
-                    ],
+                                  BoxShadow(
+                                    color: Colors.grey,
+                                    blurRadius: 5,
+                                    offset: Offset(0, 0),
+                                  ),
+                                ],
                               ),
 
                               child: Column(
@@ -223,7 +232,7 @@ String getTemperatureLevel(double? temp) {
                                       fontSize: 25,
                                     ),
                                   ),
-                                  
+
                                   Text(
                                     provider.temperature!.toStringAsFixed(0) +
                                         "°C",
@@ -251,14 +260,21 @@ String getTemperatureLevel(double? temp) {
                                     ? Colors.red
                                     : Colors.blue,
                                 borderRadius: BorderRadius.circular(10),
-                                border: Border.all(color: const Color.fromRGBO(255, 255, 255, 0.3)),
+                                border: Border.all(
+                                  color: const Color.fromRGBO(
+                                    255,
+                                    255,
+                                    255,
+                                    0.3,
+                                  ),
+                                ),
                                 boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey,
-                        blurRadius: 5,
-                        offset: Offset(0, 0),
-                      ),
-                    ],
+                                  BoxShadow(
+                                    color: Colors.grey,
+                                    blurRadius: 5,
+                                    offset: Offset(0, 0),
+                                  ),
+                                ],
                               ),
 
                               child: Column(

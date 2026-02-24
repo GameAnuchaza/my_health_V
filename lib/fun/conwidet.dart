@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:my_health/message/IFpage.dart';
 import 'package:my_health/message/messagepage.dart';
+import 'package:my_health/page/IFconpage.dart';
 import 'package:my_health/page/bmipage.dart';
 import 'package:my_health/page/homepage.dart';
 import 'package:my_health/page/runpage.dart';
+import 'package:my_health/page/setting.dart';
 import 'package:my_health/page/userpage.dart';
 
 class Conwidet with ChangeNotifier {
@@ -11,7 +14,10 @@ class Conwidet with ChangeNotifier {
     Runpage(),
     Userpage(),
     Bmipage(),
-    messageone()
+    messageone(),
+    Ifpage(),
+    IFconpage(),
+    Setting()
   ];
 
   int _currentwidet = 0;

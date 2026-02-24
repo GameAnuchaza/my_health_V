@@ -97,7 +97,7 @@ class _HomepageState extends State<Homepage> {
 
                     child: Row(
                       children: [
-                        Column(
+                        Expanded(child: Column(
                           children: <Widget>[
                             IconButton(
                               onPressed: () {
@@ -111,7 +111,25 @@ class _HomepageState extends State<Homepage> {
                             ),
                             Text("BMI", style: TextStyle(fontSize: 20)),
                           ],
-                        ),
+                        ),),
+                        Expanded(child: Column(
+                          children: <Widget>[
+                            IconButton(
+                              onPressed: () {
+                                context.read<Conwidet>().goToWidet(6);
+                              },
+                              icon: Icon(
+                                Icons.access_alarm,
+                                size: 40,
+                                color: Colors.blue,
+                              ),
+                            ),
+                            Text("IF", style: TextStyle(fontSize: 20)),
+                          ],
+                        ),),
+                        Expanded(
+                          flex: 3,
+                          child: Container())
                       ],
                     ),
                   ),
@@ -161,7 +179,7 @@ class _HomepageState extends State<Homepage> {
                         InkWell(
                           onTap: () {
                             context.read<Conwidet>().goToWidet(4);
-                            print(55);
+                            
                           },
                           child: Container(
                           width: double.infinity,
@@ -197,6 +215,44 @@ class _HomepageState extends State<Homepage> {
                         ),
                         ),
                         SizedBox(height: 20),  
+                        InkWell(
+                          onTap: () {
+                            context.read<Conwidet>().goToWidet(5);
+                            print(55);
+                          },
+                          child: Container(
+                          width: double.infinity,
+                          height: 200,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: [
+                              BoxShadow(
+                                color: const Color.fromRGBO(158, 158, 158, 1),
+                                blurRadius: 10,
+                                offset: Offset(0, 0),
+                              ),
+                            ],
+                          ),
+                          child: Column(
+                            children: [
+                              Image.asset(
+                                "assets/images/intermittent-fasting.webp",
+                                width: double.infinity,
+                                height: 160,
+                                fit: BoxFit.cover,
+                                
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text("การทํา IF 16/8 ตาราง วิธีทํา IF มือใหม่",style: TextStyle(
+                                fontSize: 16
+                              ),)
+                            ],
+                          ),
+                        ),
+                        ),
                         
                       ],
                     ),

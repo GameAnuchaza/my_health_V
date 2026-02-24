@@ -30,7 +30,7 @@ class _messageoneState extends State<messageone> {
                   onPressed: () {
                     context.read<Conwidet>().goToWidet(0);
                   },
-                  icon: Icon(Icons.arrow_back, size: 20),
+                  icon: Icon(Icons.arrow_back, size: 40),
                 ),
               ),
               Container(
