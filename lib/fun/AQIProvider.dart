@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class AQIProvider extends ChangeNotifier {
   int? _aqi;
@@ -15,6 +16,8 @@ class AQIProvider extends ChangeNotifier {
   double? get pm25 => _pm25;
   double? get temperature => _temperature;
   bool get isLoading => _isLoading;
+
+  final baseUrl = dotenv.env['WEATHER_BASE_URL'];
 
   // 🔥 เริ่ม auto fetch โดยรับ province
   void startAutoFetch(String province) {
@@ -89,8 +92,9 @@ class AQIProvider extends ChangeNotifier {
   }
 
   Future<void> fetchTemperature() async {
+
     final url = Uri.parse(
-      'https://api.open-meteo.com/v1/forecast?latitude=13.7563&longitude=100.5018&current_weather=true',
+      "$baseUrl",
     );
 
     final response = await http.get(url);
