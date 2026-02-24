@@ -1,17 +1,23 @@
-# my_health
+# 📱 My Health
 
-A new Flutter project.
+My Health เป็นแอปพลิเคชันที่พัฒนาด้วย Flutter สำหรับช่วยติดตามสุขภาพและการออกกำลังกาย  
+แอปมีฟีเจอร์คำนวณค่า BMI, วางแผนการทำ IF (Intermittent Fasting) และแสดงข้อมูลสภาพอากาศแบบเรียลไทม์ขณะวิ่งผ่านการเชื่อมต่อ API ภายนอก
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🚀 ความสามารถหลัก
 
-A few resources to get you started if this is your first Flutter project:
+- 🏃‍♂️ แสดงข้อมูลสภาพอากาศแบบเรียลไทม์ขณะวิ่ง (Weather API)
+- ⚖️ คำนวณค่า BMI (ดัชนีมวลกาย)
+- ⏳ คำนวณช่วงเวลา IF (Intermittent Fasting)
+- 📊 ออกแบบ UI เรียบง่าย ใช้งานสะดวก
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## 🛠️ เทคโนโลยีที่ใช้
+
+- Flutter
+- Dart
+- REST API (Weather API)
+- HTTP Package
