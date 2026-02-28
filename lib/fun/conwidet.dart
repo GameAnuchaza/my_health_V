@@ -10,14 +10,14 @@ import 'package:my_health/page/userpage.dart';
 
 class Conwidet with ChangeNotifier {
   final List<Widget> _pagewidet = [
-    Homepage(),
-    Runpage(),
-    Userpage(),
-    Bmipage(),
-    messageone(),
-    Ifpage(),
-    IFconpage(),
-    Setting()
+    Homepage(key: ValueKey(0)),
+    Runpage(key: ValueKey(1)),
+    Userpage(key: ValueKey(2)),
+    Bmipage(key: ValueKey(3)),
+    messageone(key: ValueKey(3)),
+    Ifpage(key: ValueKey(4)),
+    IFconpage(key: ValueKey(5)),
+    Setting(key: ValueKey(6))
   ];
 
   int _currentwidet = 0;
